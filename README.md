@@ -70,9 +70,8 @@ mevzunai_online_static_mvp/
 `index.html` dosyası doğrudan tarayıcıda açılabilir. Dev server gerekmez.
 
 ## GitHub Repo Hazırlığı
-
-Önerilen repo adı: `mevzunai-online-static-mvp`
-
+Önerilen repo adı: `mevzunai-online`
+Root Directory: `.`
 Hazırlık adımları:
 
 1. GitHub'da boş bir repository oluştur.
