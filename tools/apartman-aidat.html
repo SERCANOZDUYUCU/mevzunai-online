@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Apartman Aidat Hesaplayıcı | Gider Paylaşım Ön Hesabı</title>
+  <meta name="description" content="Toplam apartman gideri ve daire sayısını girerek daire başı tahmini aidat tutarını hesaplayın. Araç tarayıcıda çalışır ve veri kaydetmez.">
+  <link rel="icon" href="../assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/styles.css">
+  <script src="../assets/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Ana menü">
+      <a class="brand" href="../index.html"><img src="../assets/mark.svg" alt=""> MevzunAI Online</a>
+      <div class="nav-links">
+        <a href="kargo-desi.html">Kargo desi</a>
+        <a href="brut-kar.html">Brüt kâr</a>
+        <a href="ihracat-evrak.html">İhracat evrak</a>
+        <a aria-current="page" href="apartman-aidat.html">Apartman aidat</a>
+        <a href="../excel-sablonlari.html">Excel şablonları</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="wrap tool-layout">
+    <section class="prose">
+      <p class="eyebrow">Apartman yönetimi</p>
+      <h1>Apartman aidat hesaplayıcı</h1>
+      <p class="lead">Toplam gider ve daire sayısına göre eşit paylaşım varsayımıyla daire başı tahmini aidat tutarını hesaplayın. İsterseniz ödenen tutarı da girerek kalan tahmini tutarı görebilirsiniz.</p>
+      <h2>Hesaplama mantığı</h2>
+      <p>Daire başı tahmini aidat = toplam gider / daire sayısı. Kalan tutar = toplam gider - ödenen tutar. Sonuçlar yalnızca ön hesaplama içindir.</p>
+      <h2>Örnek kullanım</h2>
+      <p>20.000 TL toplam gider ve 10 daire için eşit paylaşım sonucu daire başı tahmini aidat 2.000 TL olur. 8.000 TL ödeme toplandıysa kalan tahmini tutar 12.000 TL görünür.</p>
+      <div class="warning">
+        <strong>Risk notu:</strong> Bu araç resmi muhasebe, hukuki karar, yönetim planı yorumu veya alacak takibi tavsiyesi değildir. Apartman kararları, yönetim planı, kat malikleri kurulu kararları ve profesyonel görüşler ayrıca kontrol edilmelidir.
+      </div>
+    </section>
+
+    <aside class="tool-panel" aria-label="Apartman aidat hesaplama paneli">
+      <div class="note">
+        Bu araç tarayıcınızda çalışır. Girdiğiniz bilgiler sunucuya gönderilmez ve kaydedilmez. İsim, telefon, daire sakini bilgisi, IBAN, ödeme belgesi, aidat listesi, Excel dosyası veya ticari/özel bilgi paylaşmayınız.
+      </div>
+      <div id="apartment-calculator">
+        <div class="field-grid">
+          <label>Toplam gider (TL)<input id="apartment-total-expense" type="number" min="0" step="0.01" inputmode="decimal" placeholder="20000"></label>
+          <label>Daire sayısı<input id="apartment-unit-count" type="number" min="0" step="1" inputmode="numeric" placeholder="10"></label>
+          <label>Ödenen tutar (TL)<input id="apartment-paid-amount" type="number" min="0" step="0.01" inputmode="decimal" placeholder="8000"></label>
+        </div>
+      </div>
+      <div class="result">
+        <span>Daire başı tahmini aidat</span>
+        <strong id="apartment-per-unit-result">₺0,00</strong>
+        <span>Kalan tahmini tutar</span>
+        <strong id="apartment-remaining-result">₺0,00</strong>
+        <p id="apartment-detail">Toplam gider ve daire sayısını girerek daire başı tahmini aidatı görebilirsiniz.</p>
+      </div>
+      <div>
+        <h2>Excel şablonu fikri</h2>
+        <p>Bu web aracı hızlı ön hesaplama içindir. Daha düzenli takip için apartman aidat ve gelir-gider takip Excel şablonu aday sayfasını inceleyebilirsiniz.</p>
+        <div class="actions"><a class="button secondary" href="../products/apartman-gelir-gider-excel.html">Excel şablon adayını incele</a></div>
+      </div>
+      <div>
+        <h2>Bu ilk sürümde yok</h2>
+        <p>Ödeme, dosya indirme, Excel yükleme, canlı form, üyelik veya veri kaydı bulunmamaktadır.</p>
+      </div>
+    </aside>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-links"><a href="../legal/gizlilik.html">Gizlilik</a><a href="../legal/cerez.html">Çerezler</a><a href="../legal/sorumluluk-reddi.html">Sorumluluk reddi</a></div></footer>
+</body>
+</html>

@@ -1,0 +1,122 @@
+# Static MVP Validation v1
+
+Tarih: 2026-06-29
+
+Bu dosya `mevzunai.online` statik MVP iskeleti için validasyon notlarını içerir.
+
+## Beklenen Kontroller
+
+- Tüm HTML sayfaları mevcut.
+- Araç sayfalarında SEO title ve meta description var.
+- Ortak CSS ve JS dosyaları mevcut.
+- `localStorage` ve `sessionStorage` kullanılmıyor.
+- `fetch` veya ağ isteği kullanılmıyor.
+- Canlı form submit yok.
+- GA4, AdSense veya reklam scripti yok.
+- Ödeme, login, database, backend veya dosya yükleme yok.
+- Hesaplamalar tarayıcıda çalışıyor.
+- Responsive tasarım temel olarak kontrol edilecek.
+
+## Komut Kontrolleri
+
+2026-06-29 tarihinde PowerShell ile doğrulandı:
+
+- Beklenen 10 HTML sayfası mevcut.
+- Tüm HTML sayfalarında `<title>` mevcut.
+- Tüm HTML sayfalarında meta description mevcut.
+- `assets/app.js` içinde `localStorage`, `sessionStorage`, `fetch`, `XMLHttpRequest`, `sendBeacon`, `history.pushState`, `history.replaceState`, `window.location` veya `document.cookie` kullanımı bulunmadı.
+- HTML dosyalarında `googletagmanager`, `google-analytics`, `adsbygoogle`, `doubleclick`, `supabase`, `stripe`, `iyzico`, `shopier`, `formspree`, `tally.so`, `<form` veya `type="file"` kullanımı bulunmadı.
+
+## Tarayıcı Kontrolleri
+
+Geçici localhost server ile doğrulandı, test sonrası server kapatıldı:
+
+- Ana sayfa açıldı, H1 doğru göründü ve 3 araç kartı bulundu.
+- Ana sayfada dış script bulunmadı.
+- Masaüstü görünümde yatay taşma bulunmadı.
+- Kargo desi hesaplayıcı: 40 x 30 x 20 cm ve 5 kg girdisi için sonuç `8,00 desi`, karşılaştırma değeri `8,00 kg/desi`.
+- Brüt kâr hesaplayıcı: 1000 TL satış, 600 TL ürün maliyeti, 70 TL kargo, %10 komisyon, 20 TL paketleme için sonuç `₺210,00` ve `%21,00`.
+- İhracat evrak listesi: 4 işaretli başlık için `4 / 9 başlık`, `%44` ve progress genişliği yaklaşık `%44,44`.
+- 375px mobil viewport kontrolünde ana sayfa ve brüt kâr aracı yatay taşma üretmedi.
+
+## Sonuç
+
+Statik MVP iskeleti düşük risk sınırlarına uygun şekilde oluşturuldu. Canlı entegrasyon, veri kaydı, backend, database, login, ödeme, canlı form, GA4 veya AdSense bulunmadı.
+
+## Pre-Deploy QA v1
+
+Tarih: 2026-06-29
+
+Canlı yayın öncesi son QA kapsamında tekrar doğrulandı:
+
+- 10 HTML sayfası bulundu.
+- Tüm iç link hedefleri mevcut; kırık link veya 404 adayı bulunmadı.
+- Header ve footer navigasyon linkleri beklenen sayfalara gidiyor.
+- Tüm sayfalarda SEO title ve meta description mevcut.
+- Tüm sayfalarda yatay taşma kontrolü masaüstünde temiz.
+- 375px mobil viewport kontrolünde ana sayfa, kargo desi, brüt kâr ve ihracat evrak sayfalarında yatay taşma yok.
+- Kargo desi hesabı: 40 x 30 x 20 cm ve 5 kg için `8,00 desi`, karşılaştırma değeri `8,00 kg/desi`.
+- Brüt kâr hesabı: 1000 TL satış, 600 TL ürün maliyeti, 70 TL kargo, %10 komisyon ve 20 TL paketleme için `₺210,00`, `%21,00`.
+- İhracat checklist: 4 / 9 işaretli başlık için `%44` ve progress genişliği yaklaşık `%44,44`.
+- Hesaplama ve checklist etkileşimlerinden sonra URL değişmedi; kullanıcı girdileri URL'ye yazılmıyor.
+- HTML sayfalarında `<form>` ve `type="file"` bulunmadı.
+- `assets/app.js` içinde `localStorage`, `sessionStorage`, `fetch`, `XMLHttpRequest`, `sendBeacon`, `history.pushState`, `history.replaceState`, `window.location` veya `document.cookie` kullanımı bulunmadı.
+- GA4, AdSense, form sağlayıcıları, ödeme sağlayıcıları ve Supabase izi bulunmadı.
+- README içindeki Vercel deploy notu yeterli bulundu: root directory, build command ve output directory notları mevcut.
+
+## Apartman Management Module QA v1
+
+Tarih: 2026-06-29
+
+Apartman Yönetimi modülü eklendikten sonra doğrulandı:
+
+- 13 HTML sayfası bulundu.
+- Tüm HTML sayfalarında SEO title ve meta description mevcut.
+- Tüm iç link hedefleri mevcut; kırık link bulunmadı.
+- `tools/apartman-aidat.html`, `products/apartman-gelir-gider-excel.html` ve `excel-sablonlari.html` sayfalarında `<form>` ve `type="file"` bulunmadı.
+- Aidat hesaplayıcı: 20.000 TL toplam gider, 10 daire ve 8.000 TL ödenen tutar için daire başı `₺2.000,00`, kalan tahmini tutar `₺12.000,00`.
+- Aidat hesaplama etkileşiminden sonra URL değişmedi; kullanıcı girdileri URL'ye yazılmıyor.
+- 375px mobil viewport kontrolünde ana sayfa, apartman aidat hesaplayıcı, apartman Excel ürün tanıtımı ve Excel şablonları kategori sayfasında yatay taşma yok.
+- `assets/app.js` içinde `localStorage`, `sessionStorage`, `fetch`, ağ isteği, cookie yazımı veya URL state yazımı bulunmadı.
+- GA4, AdSense, canlı form, ödeme sağlayıcıları ve Supabase izi bulunmadı.
+- Mevcut Excel dosyalarına dokunulmadı; kullanıcıya Excel yükletme veya indirme akışı eklenmedi.
+
+## GitHub Vercel Deploy Prep v1
+
+Tarih: 2026-06-29
+
+Deploy hazırlığı kapsamında doğrulandı:
+
+- `README.md` GitHub repo hazırlığı, Vercel deploy özeti, domain bağlama notları ve Search Console doğrulama notlarıyla güncellendi.
+- `DEPLOYMENT.md` oluşturuldu.
+- `POST_LAUNCH_CHECKLIST.md` oluşturuldu.
+- Domain notları `mevzunai.online` ve `www.mevzunai.online` için eklendi.
+- Search Console domain property ve DNS TXT doğrulama notları eklendi.
+- Yayın sonrası araç, mobil, SEO, legal ve güvenlik kontrol listesi eklendi.
+- Deploy hazırlığı yalnızca dokümantasyon seviyesinde yapıldı.
+- GA4, AdSense, form, ödeme, backend, database, Supabase veya kullanıcı verisi toplayacak entegrasyon eklenmedi.
+
+## Final Pre-Deploy QA v2
+
+Tarih: 2026-06-29
+
+Apartman Yönetimi modülü ve deploy hazırlığı sonrasında tüm site tekrar kontrol edildi:
+
+- 13 HTML sayfasının tamamı bulundu.
+- Tüm iç link hedefleri mevcut; kırık link bulunmadı.
+- Header/footer navigasyon hedefleri dosya yapısıyla uyumlu.
+- Tüm HTML sayfalarında SEO title ve meta description mevcut.
+- Runtime kontrolde 13 sayfanın tamamında form ve file input sayısı `0`.
+- Masaüstü runtime kontrolde 13 sayfanın tamamında yatay taşma yok.
+- 375px mobil viewport kontrolde ana sayfa, dört araç sayfası, Excel şablonları, apartman Excel tanıtımı ve gizlilik sayfasında yatay taşma yok.
+- Kargo desi hesabı: 40 x 30 x 20 cm ve 5 kg için `8,00 desi`, `8,00 kg/desi`.
+- Brüt kâr hesabı: 1000 TL satış, 600 TL ürün maliyeti, 70 TL kargo, %10 komisyon ve 20 TL paketleme için `₺210,00`, `%21,00`.
+- İhracat checklist: 4 / 9 işaretli başlık için `%44`, progress genişliği yaklaşık `%44,44`.
+- Apartman aidat hesabı: 20.000 TL toplam gider, 10 daire ve 8.000 TL ödenen tutar için daire başı `₺2.000,00`, kalan tahmini tutar `₺12.000,00`.
+- Hesaplama/checklist etkileşimlerinden sonra URL değişmedi; kullanıcı girdileri URL'ye yazılmıyor.
+- `assets/app.js` içinde `localStorage`, `sessionStorage`, `fetch`, `XMLHttpRequest`, `sendBeacon`, history state yazımı, cookie yazımı veya URL query kullanımı bulunmadı.
+- GA4, AdSense, canlı form, ödeme sağlayıcıları, Supabase ve dosya yükleme izi bulunmadı.
+- README, DEPLOYMENT, POST_LAUNCH_CHECKLIST ve VALIDATION dosyaları deploy öncesi kullanım için yeterli bulundu.
+- Mevzun ana sistemine dokunulmadı.
+
+PASS / STATIC_MVP_SCAFFOLD_CREATED / NO_PROTECTED_SYSTEM_CHANGE

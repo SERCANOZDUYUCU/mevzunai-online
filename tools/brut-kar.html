@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Brüt Kâr Hesaplayıcı | Satış Kârı ve Marj Ön Hesabı</title>
+  <meta name="description" content="Satış fiyatı ve maliyetleri girerek tahmini brüt kâr ve brüt kâr oranını hesaplayın. Araç tarayıcıda çalışır, finansal tavsiye vermez.">
+  <link rel="icon" href="../assets/mark.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../assets/styles.css">
+  <script src="../assets/app.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Ana menü">
+      <a class="brand" href="../index.html"><img src="../assets/mark.svg" alt=""> MevzunAI Online</a>
+      <div class="nav-links">
+        <a href="kargo-desi.html">Kargo desi</a>
+        <a aria-current="page" href="brut-kar.html">Brüt kâr</a>
+        <a href="ihracat-evrak.html">İhracat evrak</a>
+        <a href="../pages/hakkinda.html">Hakkında</a>
+        <a href="../pages/iletisim.html">İletişim</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="wrap tool-layout">
+    <section class="prose">
+      <p class="eyebrow">Ön hesaplama</p>
+      <h1>Brüt kâr hesaplayıcı</h1>
+      <p class="lead">Satış fiyatı ve temel maliyet kalemleri üzerinden hızlı bir brüt kâr ön hesabı yapın. Sonuçlar karar, muhasebe kaydı veya finansal tavsiye yerine geçmez.</p>
+      <h2>Hesaplama mantığı</h2>
+      <p>Toplam doğrudan maliyet = ürün maliyeti + kargo maliyeti + komisyon + paketleme/diğer maliyet. Brüt kâr = satış fiyatı - toplam doğrudan maliyet.</p>
+      <h2>Örnek kullanım</h2>
+      <p>1.000 TL satış, 600 TL ürün maliyeti, 70 TL kargo, %10 komisyon ve 20 TL paketleme için tahmini brüt kâr 210 TL, oran yaklaşık %21 olur.</p>
+      <div class="warning">
+        <strong>Risk notu:</strong> Bu araç finansal, muhasebesel, vergisel, yatırım veya fiyatlandırma tavsiyesi değildir. Vergi, genel gider, personel, iade, iskonto ve finansman etkileri dahil olmayabilir.
+      </div>
+    </section>
+
+    <aside class="tool-panel" aria-label="Brüt kâr hesaplama paneli">
+      <div class="note">
+        Bu araç tarayıcınızda çalışır. Girdiğiniz bilgiler sunucuya gönderilmez ve kaydedilmez. Müşteri listesi, fiyat listesi dosyası, fatura, banka bilgisi veya ticari sır paylaşmayınız.
+      </div>
+      <div id="profit-calculator">
+        <div class="field-grid">
+          <label>Satış fiyatı (TL)<input id="sale-price" type="number" min="0" step="0.01" inputmode="decimal" placeholder="1000"></label>
+          <label>Ürün maliyeti (TL)<input id="product-cost" type="number" min="0" step="0.01" inputmode="decimal" placeholder="600"></label>
+          <label>Kargo maliyeti (TL)<input id="shipping-cost" type="number" min="0" step="0.01" inputmode="decimal" placeholder="70"></label>
+          <label>Komisyon (%)<input id="commission-rate" type="number" min="0" step="0.01" inputmode="decimal" placeholder="10"></label>
+          <label>Paketleme/diğer (TL)<input id="packaging-cost" type="number" min="0" step="0.01" inputmode="decimal" placeholder="20"></label>
+        </div>
+      </div>
+      <div class="result">
+        <span>Tahmini brüt kâr</span>
+        <strong id="profit-result">₺0,00</strong>
+        <span>Tahmini brüt kâr oranı</span>
+        <strong id="profit-margin-result">%0,00</strong>
+        <p id="profit-detail">Tahmini doğrudan maliyet: ₺0,00.</p>
+      </div>
+      <div>
+        <h2>Mevzun ile bağlantı</h2>
+        <p>Bir ürünün kârlılığı tek siparişten ibaret değildir. İade, tahsilat, satış kanalı, kargo, iskonto ve stok etkileri birlikte izlendiğinde gerçek tablo daha netleşir.</p>
+      </div>
+      <div>
+        <h2>Yakında</h2>
+        <p>Pazaryeri satıcıları için brüt kâr ve maliyet takip Excel şablonu hazırlanabilir. Bu ilk sürümde ödeme, satış veya otomatik form entegrasyonu yoktur.</p>
+      </div>
+    </aside>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-links"><a href="../legal/gizlilik.html">Gizlilik</a><a href="../legal/cerez.html">Çerezler</a><a href="../legal/sorumluluk-reddi.html">Sorumluluk reddi</a></div></footer>
+</body>
+</html>
