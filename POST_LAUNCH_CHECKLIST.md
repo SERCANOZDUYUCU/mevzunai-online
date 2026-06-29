@@ -89,12 +89,14 @@ Canlı sitede şu izler olmamalı:
 - AdSense
 - Form
 - Ödeme
-- Dosya indirme
+- E-posta şartlı dosya indirme
 - Excel yükleme
 - Üyelik
 - Database
 - Supabase
 
 Bu özelliklerden biri istenirse önce ayrı risk, KVKK, vergi/fatura ve güvenlik değerlendirmesi yapılmalıdır.
+
+Not: `downloads/apartman-gelir-gider-takip-sablonu.xlsx` dosyası ücretsiz, statik ve veri toplamayan indirme ürünü olarak eklenmiştir. Bu dosya için form, ödeme, kullanıcı hesabı, backend veya analytics kullanılmaz.
 
 PASS / DEPLOY_PREP_READY / NO_PROTECTED_SYSTEM_CHANGE

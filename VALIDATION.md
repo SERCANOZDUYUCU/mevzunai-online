@@ -120,3 +120,22 @@ Apartman Yönetimi modülü ve deploy hazırlığı sonrasında tüm site tekrar
 - Mevzun ana sistemine dokunulmadı.
 
 PASS / STATIC_MVP_SCAFFOLD_CREATED / NO_PROTECTED_SYSTEM_CHANGE
+
+## Free Apartment Excel Download v1
+
+Tarih: 2026-06-29
+
+Apartman gelir-gider Excel şablonu ücretsiz statik indirme ürünü olarak eklendi:
+
+- İndirilecek dosya: `downloads/apartman-gelir-gider-takip-sablonu.xlsx`
+- Kaynak Excel dosyasında eski kişi adı, tedarikçi adı, dekont numarası, IBAN/TCKN izi ve özel veri taraması yapıldı; eşleşme bulunmadı.
+- Ürün sayfasına, Excel şablonları kategori sayfasına ve ana sayfaya ücretsiz indirme bağlantısı eklendi.
+- İndirme için e-posta, form, ödeme, kullanıcı hesabı, backend, database, GA4, AdSense veya Supabase eklenmedi.
+- Sayfalara şu uyarı eklendi: “Bu şablon genel kullanım amaçlıdır; resmi muhasebe, hukuki danışmanlık veya profesyonel apartman yönetim hizmeti yerine geçmez.”
+- 13 HTML sayfası içinde kırık iç link bulunmadı.
+- Yerel HTTP testinde `/downloads/apartman-gelir-gider-takip-sablonu.xlsx` indirildi; dosya boyutu kaynak statik dosyayla eşleşti.
+- 375px mobil viewport kontrolünde ana sayfa, Excel şablonları sayfası ve apartman Excel ürün sayfasında yatay taşma bulunmadı.
+- Kritik sayfalarda form ve dosya yükleme input sayısı `0`.
+- Aktif HTML/JS taramasında GA4, AdSense, ödeme sağlayıcıları, Supabase, canlı form, `fetch`, `localStorage` veya `sessionStorage` kullanımı bulunmadı. Çerez politikası içinde `localStorage/sessionStorage` yalnızca açıklama metni olarak geçmektedir.
+
+PASS / FREE_EXCEL_DOWNLOAD_ADDED / NO_PROTECTED_SYSTEM_CHANGE

@@ -10,7 +10,7 @@ Bu klasör `mevzunai.online` için düşük riskli, statik, kullanıcı verisi t
 - İhracat evrak kontrol listesi
 - Apartman aidat hesaplayıcı
 - Excel şablonları kategori sayfası
-- Apartman gelir-gider Excel şablonu tanıtım sayfası
+- Apartman gelir-gider Excel şablonu ücretsiz indirme sayfası
 - Hakkında
 - İletişim
 - Gizlilik politikası taslağı
@@ -27,6 +27,7 @@ Bu MVP'de şu özellikler yoktur:
 - Login
 - Ödeme
 - Dosya yükleme
+- Ücretli satış veya e-posta şartlı indirme
 - GA4
 - AdSense
 - Canlı form
@@ -57,6 +58,8 @@ mevzunai_online_static_mvp/
     iletisim.html
   products/
     apartman-gelir-gider-excel.html
+  downloads/
+    apartman-gelir-gider-takip-sablonu.xlsx
   tools/
     apartman-aidat.html
     brut-kar.html
@@ -70,8 +73,9 @@ mevzunai_online_static_mvp/
 `index.html` dosyası doğrudan tarayıcıda açılabilir. Dev server gerekmez.
 
 ## GitHub Repo Hazırlığı
-Önerilen repo adı: `mevzunai-online`
-Root Directory: `.`
+
+Önerilen repo adı: `mevzunai-online-static-mvp`
+
 Hazırlık adımları:
 
 1. GitHub'da boş bir repository oluştur.
@@ -115,7 +119,7 @@ Search Console notu:
 - `mevzunai.online` için DNS TXT doğrulaması kullan.
 - Doğrulama tamamlandıktan sonra ana sayfa ve önemli araç sayfaları URL Inspection ile kontrol edilebilir.
 
-Canlı deploy öncesinde hukuki metinler profesyonel incelemeden geçirilmeli; GA4, AdSense, form veya ödeme eklenirse gizlilik ve çerez metinleri yeniden güncellenmelidir.
+Canlı deploy öncesinde hukuki metinler profesyonel incelemeden geçirilmeli; GA4, AdSense, form, ödeme veya e-posta şartlı indirme eklenirse gizlilik ve çerez metinleri yeniden güncellenmelidir.
 
 Ayrıntılı adımlar için `DEPLOYMENT.md`, yayın sonrası kontrol için `POST_LAUNCH_CHECKLIST.md` dosyasını kullan.
 
