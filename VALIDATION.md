@@ -179,3 +179,24 @@ Apartman gelir-gider tablosu rehberi statik SEO sayfası olarak eklendi:
 - Aktif HTML/JS taramasında GA4, AdSense, ödeme sağlayıcıları, Supabase, canlı form, `fetch`, `localStorage` veya `sessionStorage` kullanımı bulunmadı.
 
 PASS / SEO_ARTICLE_APARTMENT_INCOME_EXPENSE_ADDED / NO_PROTECTED_SYSTEM_CHANGE
+
+## SEO Article Apartment Debt Tracking v1
+
+Tarih: 2026-06-30
+
+Apartman aidat borç takibi rehberi statik SEO sayfası olarak eklendi:
+
+- Yeni sayfa: `rehberler/apartman-aidat-borc-takibi-nasil-yapilir.html`
+- Ana sayfaya ve Excel şablonları sayfasına yeni rehber linki eklendi.
+- Önceki iki rehberden yeni borç takibi rehberine iç link eklendi.
+- Yeni rehberden aidat takip rehberine, gelir-gider rehberine, apartman aidat hesaplayıcıya ve Excel şablonları sayfasına iç link verildi.
+- Rehber CTA bağlantısı `products/apartman-gelir-gider-excel.html` ürün sayfasına yönlendiriyor.
+- Sitemap 16 URL olacak şekilde güncellendi.
+- `robots.txt` değiştirilmedi.
+- 16 HTML sayfası içinde kırık iç link bulunmadı.
+- Sitemap XML kontrolü geçti; sadece `urlset`, `url`, `loc` tagleri var.
+- 360px mobil viewport kontrolünde ana sayfa, Excel şablonları sayfası, üç rehber ve ürün sayfasında yatay taşma bulunmadı.
+- Kritik sayfalarda form ve dosya yükleme input sayısı `0`.
+- Aktif HTML/JS taramasında GA4, AdSense, ödeme sağlayıcıları, Supabase, canlı form, `fetch`, `localStorage` veya `sessionStorage` kullanımı bulunmadı.
+
+PASS / SEO_ARTICLE_APARTMENT_DEBT_TRACKING_ADDED / NO_PROTECTED_SYSTEM_CHANGE
