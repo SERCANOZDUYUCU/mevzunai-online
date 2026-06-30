@@ -163,8 +163,10 @@ p {
   padding: 10px 16px;
   background: var(--accent-strong);
   color: #fff;
+  font: inherit;
   font-weight: 720;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .button.secondary {
@@ -310,9 +312,44 @@ input[type="number"] {
 }
 
 input[type="number"]:focus,
-input[type="checkbox"]:focus {
+input[type="checkbox"]:focus,
+input[type="radio"]:focus {
   outline: 3px solid rgba(35, 116, 90, 0.22);
   outline-offset: 2px;
+}
+
+.tool-panel h2 {
+  font-size: 1.18rem;
+}
+
+.tool-panel h2 + .field-grid,
+.tool-panel h2 + .choice-grid,
+.field-grid + h2,
+.choice-grid + h2 {
+  margin-top: 16px;
+}
+
+.choice-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  margin-top: 14px;
+}
+
+.choice-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  align-items: center;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 12px;
+  background: #fff;
+}
+
+.choice-item span {
+  color: var(--muted);
+  font-weight: 650;
 }
 
 .result {
@@ -322,8 +359,49 @@ input[type="checkbox"]:focus {
   background: #f3faf7;
 }
 
-.result strong {
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.result-grid > div {
+  display: grid;
+  gap: 4px;
+  min-width: 0;
+}
+
+.result strong,
+.result-grid strong {
+  overflow-wrap: anywhere;
   font-size: 1.8rem;
+}
+
+.result-grid span {
+  color: var(--muted);
+}
+
+.copy-text {
+  width: 100%;
+  min-height: 132px;
+  margin-top: 14px;
+  border: 1px solid #cbd4cd;
+  border-radius: 7px;
+  padding: 12px;
+  color: var(--ink);
+  background: #fff;
+  font: inherit;
+  resize: vertical;
+}
+
+.copy-text:focus {
+  outline: 3px solid rgba(35, 116, 90, 0.22);
+  outline-offset: 2px;
+}
+
+.muted-text {
+  margin-top: 10px;
+  color: var(--muted);
 }
 
 .note,
@@ -443,6 +521,11 @@ input[type="checkbox"]:focus {
   }
 
   .field-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .choice-grid,
+  .result-grid {
     grid-template-columns: 1fr;
   }
 

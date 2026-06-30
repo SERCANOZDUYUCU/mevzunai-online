@@ -265,3 +265,25 @@ Tarih: 2026-06-30
 - Yeni rehberde gümrük/hukuki kesin tavsiye dili veya resmi uygunluk garantisi kullanılmadı; içerik genel bilgilendirme ve ön hazırlık olarak sunuldu.
 
 PASS / SEO_ARTICLE_EXPORT_DOCUMENTS_ADDED / NO_PROTECTED_SYSTEM_CHANGE
+
+## Apartment Tool v2 Simple Upgrade
+
+Tarih: 2026-06-30
+
+Apartman aidat hesaplayıcı statik mini apartman yönetim ön hesaplama aracına yükseltildi:
+
+- `tools/apartman-aidat.html` içinde temizlik, ortak elektrik, asansör bakım, kapıcı/personel, bakım-onarım ve diğer gider alanları eklendi.
+- Daire sayısı, opsiyonel dükkan sayısı, opsiyonel dükkan katsayısı, eşit paylaşım ve katsayılı paylaşım seçenekleri eklendi.
+- Ödeyen daire sayısı, opsiyonel ödenen toplam tutar, kalan tahsilat ve tahsilat oranı sonuçları eklendi.
+- WhatsApp'a kopyalanabilir duyuru metni eklendi.
+- Ücretsiz Apartman Gelir-Gider Excel Şablonu ürün sayfası ve indirme bağlantısı sonuç altında korundu.
+- Yeni sayfa eklenmediği için `sitemap.xml` değiştirilmedi; sitemap 19 URL olarak kaldı.
+- 19 HTML sayfası içinde kırık iç link bulunmadı.
+- Katsayılı test: 20.000 TL gider, 10 daire, 2 dükkan, dükkan katsayısı 2 için daire başı `₺1.428,57`, dükkan başı `₺2.857,14`, beklenen tahsilat `₺20.000,00`, 6 ödeyen daireye göre ödenen toplam `₺8.571,43`, kalan `₺11.428,57`, tahsilat oranı `%43`.
+- Eşit paylaşım ve manuel ödeme testi: 20.000 TL gider, 10 daire, 2 dükkan ve 12.000 TL manuel ödenen toplam için daire/dükkan başı `₺1.666,67`, kalan `₺8.000,00`, tahsilat oranı `%60`.
+- 360px mobil viewport kontrolünde apartman aracı yatay taşma üretmedi.
+- Hesaplama etkileşimlerinden sonra URL değişmedi; kullanıcı girdileri URL'ye yazılmadı.
+- Kritik sayfalarda form ve dosya yükleme input sayısı `0`.
+- Aktif HTML/JS taramasında GA4, AdSense, ödeme sağlayıcıları, Supabase, canlı form, `fetch`, `localStorage` veya `sessionStorage` kullanımı bulunmadı.
+
+PASS / APARTMENT_TOOL_V2_SIMPLE_UPGRADE / NO_PROTECTED_SYSTEM_CHANGE
