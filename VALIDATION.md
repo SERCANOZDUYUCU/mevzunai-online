@@ -243,3 +243,25 @@ Brüt kâr hesaplama rehberi statik SEO sayfası olarak eklendi:
 - Yeni rehberde sonuçlar genel bilgilendirme ve ön hesaplama olarak anlatıldı; finansal, muhasebesel, vergisel, yatırım veya fiyatlandırma tavsiyesi dili kullanılmadı.
 
 PASS / SEO_ARTICLE_GROSS_PROFIT_ADDED / NO_PROTECTED_SYSTEM_CHANGE
+
+## SEO Article Export Documents v1
+
+Tarih: 2026-06-30
+
+İhracat evrakları rehberi statik SEO sayfası olarak eklendi:
+
+- Yeni sayfa: `rehberler/ihracat-evraklari-nelerdir.html`
+- Ana sayfaya yeni ihracat evrak rehber linki eklendi.
+- İhracat evrak kontrol listesi sayfasından yeni rehbere iç link eklendi.
+- Yeni rehberden ihracat evrak kontrol listesine, kargo desi rehberine, brüt kâr rehberine ve Excel şablonları sayfasına iç link verildi.
+- Rehber CTA bağlantısı `tools/ihracat-evrak.html` araç sayfasına yönlendiriyor.
+- Sitemap 19 URL olacak şekilde güncellendi.
+- `robots.txt` değiştirilmedi.
+- 19 HTML sayfası içinde kırık iç link bulunmadı.
+- Sitemap XML kontrolü geçti; sadece `urlset`, `url`, `loc` tagleri var.
+- 360px mobil viewport kontrolünde ana sayfa, ihracat evrak kontrol listesi ve yeni ihracat evrak rehberinde yatay taşma bulunmadı.
+- Kritik sayfalarda form ve dosya yükleme input sayısı `0`.
+- Aktif HTML/JS taramasında GA4, AdSense, ödeme sağlayıcıları, Supabase, canlı form, `fetch`, `localStorage` veya `sessionStorage` kullanımı bulunmadı.
+- Yeni rehberde gümrük/hukuki kesin tavsiye dili veya resmi uygunluk garantisi kullanılmadı; içerik genel bilgilendirme ve ön hazırlık olarak sunuldu.
+
+PASS / SEO_ARTICLE_EXPORT_DOCUMENTS_ADDED / NO_PROTECTED_SYSTEM_CHANGE
