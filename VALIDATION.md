@@ -200,3 +200,24 @@ Apartman aidat borç takibi rehberi statik SEO sayfası olarak eklendi:
 - Aktif HTML/JS taramasında GA4, AdSense, ödeme sağlayıcıları, Supabase, canlı form, `fetch`, `localStorage` veya `sessionStorage` kullanımı bulunmadı.
 
 PASS / SEO_ARTICLE_APARTMENT_DEBT_TRACKING_ADDED / NO_PROTECTED_SYSTEM_CHANGE
+
+## SEO Article Cargo Desi v1
+
+Tarih: 2026-06-30
+
+Kargo desi hesaplama rehberi statik SEO sayfası olarak eklendi:
+
+- Yeni sayfa: `rehberler/kargo-desi-nasil-hesaplanir.html`
+- Ana sayfaya yeni kargo desi rehber linki eklendi.
+- Kargo desi hesaplayıcı sayfasından yeni rehbere iç link eklendi.
+- Yeni rehberden kargo desi hesaplayıcıya, brüt kâr hesaplayıcıya, Excel şablonları sayfasına ve apartman aidat takip Excel rehberine iç link verildi.
+- Rehber CTA bağlantısı `tools/kargo-desi.html` araç sayfasına yönlendiriyor.
+- Sitemap 17 URL olacak şekilde güncellendi.
+- `robots.txt` değiştirilmedi.
+- 17 HTML sayfası içinde kırık iç link bulunmadı.
+- Sitemap XML kontrolü geçti; sadece `urlset`, `url`, `loc` tagleri var.
+- 360px mobil viewport kontrolünde ana sayfa, kargo desi hesaplayıcı ve yeni kargo desi rehberinde yatay taşma bulunmadı.
+- Kritik sayfalarda form ve dosya yükleme input sayısı `0`.
+- Aktif HTML/JS taramasında GA4, AdSense, ödeme sağlayıcıları, Supabase, canlı form, `fetch`, `localStorage` veya `sessionStorage` kullanımı bulunmadı.
+
+PASS / SEO_ARTICLE_CARGO_DESI_ADDED / NO_PROTECTED_SYSTEM_CHANGE
