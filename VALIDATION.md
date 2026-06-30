@@ -221,3 +221,25 @@ Kargo desi hesaplama rehberi statik SEO sayfası olarak eklendi:
 - Aktif HTML/JS taramasında GA4, AdSense, ödeme sağlayıcıları, Supabase, canlı form, `fetch`, `localStorage` veya `sessionStorage` kullanımı bulunmadı.
 
 PASS / SEO_ARTICLE_CARGO_DESI_ADDED / NO_PROTECTED_SYSTEM_CHANGE
+
+## SEO Article Gross Profit v1
+
+Tarih: 2026-06-30
+
+Brüt kâr hesaplama rehberi statik SEO sayfası olarak eklendi:
+
+- Yeni sayfa: `rehberler/brut-kar-nasil-hesaplanir.html`
+- Ana sayfaya yeni brüt kâr rehber linki eklendi.
+- Brüt kâr hesaplayıcı sayfasından yeni rehbere iç link eklendi.
+- Yeni rehberden brüt kâr hesaplayıcıya, kargo desi hesaplayıcıya, kargo desi rehberine ve Excel şablonları sayfasına iç link verildi.
+- Rehber CTA bağlantısı `tools/brut-kar.html` araç sayfasına yönlendiriyor.
+- Sitemap 18 URL olacak şekilde güncellendi.
+- `robots.txt` değiştirilmedi.
+- 18 HTML sayfası içinde kırık iç link bulunmadı.
+- Sitemap XML kontrolü geçti; sadece `urlset`, `url`, `loc` tagleri var.
+- 360px mobil viewport kontrolünde ana sayfa, brüt kâr hesaplayıcı ve yeni brüt kâr rehberinde yatay taşma bulunmadı.
+- Kritik sayfalarda form ve dosya yükleme input sayısı `0`.
+- Aktif HTML/JS taramasında GA4, AdSense, ödeme sağlayıcıları, Supabase, canlı form, `fetch`, `localStorage` veya `sessionStorage` kullanımı bulunmadı.
+- Yeni rehberde sonuçlar genel bilgilendirme ve ön hesaplama olarak anlatıldı; finansal, muhasebesel, vergisel, yatırım veya fiyatlandırma tavsiyesi dili kullanılmadı.
+
+PASS / SEO_ARTICLE_GROSS_PROFIT_ADDED / NO_PROTECTED_SYSTEM_CHANGE
