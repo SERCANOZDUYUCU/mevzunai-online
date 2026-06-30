@@ -139,3 +139,43 @@ Apartman gelir-gider Excel şablonu ücretsiz statik indirme ürünü olarak ekl
 - Aktif HTML/JS taramasında GA4, AdSense, ödeme sağlayıcıları, Supabase, canlı form, `fetch`, `localStorage` veya `sessionStorage` kullanımı bulunmadı. Çerez politikası içinde `localStorage/sessionStorage` yalnızca açıklama metni olarak geçmektedir.
 
 PASS / FREE_EXCEL_DOWNLOAD_ADDED / NO_PROTECTED_SYSTEM_CHANGE
+
+## SEO Article Apartment Excel v1
+
+Tarih: 2026-06-30
+
+Apartman aidat takip Excel kullanım rehberi statik SEO sayfası olarak eklendi:
+
+- Yeni sayfa: `rehberler/apartman-aidat-takip-excel-nasil-kullanilir.html`
+- Ana sayfaya ve Excel şablonları sayfasına rehber linki eklendi.
+- Rehber CTA bağlantısı `products/apartman-gelir-gider-excel.html` ürün sayfasına yönlendiriyor.
+- Sitemap 14 URL olacak şekilde güncellendi.
+- `robots.txt` değiştirilmedi.
+- 14 HTML sayfası içinde kırık iç link bulunmadı.
+- Sitemap XML parse kontrolü geçti; sadece `urlset`, `url`, `loc` tagleri var.
+- 375px mobil viewport kontrolünde ana sayfa, Excel şablonları sayfası, yeni rehber ve ürün sayfasında yatay taşma bulunmadı.
+- Kritik sayfalarda form ve dosya yükleme input sayısı `0`.
+- Aktif HTML/JS taramasında GA4, AdSense, ödeme sağlayıcıları, Supabase, canlı form, `fetch`, `localStorage` veya `sessionStorage` kullanımı bulunmadı.
+
+PASS / SEO_ARTICLE_APARTMENT_EXCEL_ADDED / NO_PROTECTED_SYSTEM_CHANGE
+
+## SEO Article Apartment Income Expense v1
+
+Tarih: 2026-06-30
+
+Apartman gelir-gider tablosu rehberi statik SEO sayfası olarak eklendi:
+
+- Yeni sayfa: `rehberler/apartman-gelir-gider-tablosu-nasil-tutulur.html`
+- Ana sayfaya ve Excel şablonları sayfasına yeni rehber linki eklendi.
+- İlk rehberden yeni gelir-gider rehberine iç link eklendi.
+- Yeni rehberden ilk rehbere, apartman aidat hesaplayıcıya ve Excel şablonları sayfasına iç link verildi.
+- Rehber CTA bağlantısı `products/apartman-gelir-gider-excel.html` ürün sayfasına yönlendiriyor.
+- Sitemap 15 URL olacak şekilde güncellendi.
+- `robots.txt` değiştirilmedi.
+- 15 HTML sayfası içinde kırık iç link bulunmadı.
+- Sitemap XML parse kontrolü geçti; sadece `urlset`, `url`, `loc` tagleri var.
+- 375px mobil viewport kontrolünde ana sayfa, Excel şablonları sayfası, iki rehber ve ürün sayfasında yatay taşma bulunmadı.
+- Kritik sayfalarda form ve dosya yükleme input sayısı `0`.
+- Aktif HTML/JS taramasında GA4, AdSense, ödeme sağlayıcıları, Supabase, canlı form, `fetch`, `localStorage` veya `sessionStorage` kullanımı bulunmadı.
+
+PASS / SEO_ARTICLE_APARTMENT_INCOME_EXPENSE_ADDED / NO_PROTECTED_SYSTEM_CHANGE
