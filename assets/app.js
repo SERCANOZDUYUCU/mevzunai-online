@@ -42,32 +42,98 @@
     if (!form) return;
 
     var desiText = document.getElementById("cargo-desi-result");
+    var totalDesiText = document.getElementById("cargo-total-desi-result");
+    var totalWeightText = document.getElementById("cargo-total-weight-result");
     var billableText = document.getElementById("cargo-billable-result");
+    var altDesiText = document.getElementById("cargo-alt-desi-result");
+    var altDiffText = document.getElementById("cargo-alt-diff-result");
     var detailText = document.getElementById("cargo-detail");
+    var altDetailText = document.getElementById("cargo-alt-detail");
+    var commerceNoteText = document.getElementById("cargo-commerce-note");
+    var summaryText = document.getElementById("cargo-summary");
+    var copyButton = document.getElementById("cargo-copy-summary");
+    var copyStatus = document.getElementById("cargo-copy-status");
 
     function calculate() {
       var width = numberValue("cargo-width");
       var length = numberValue("cargo-length");
       var height = numberValue("cargo-height");
       var weight = numberValue("cargo-weight");
+      var quantityInput = numberValue("cargo-quantity");
+      var quantity = quantityInput > 0 ? quantityInput : 1;
+      var altWidth = numberValue("cargo-alt-width");
+      var altLength = numberValue("cargo-alt-length");
+      var altHeight = numberValue("cargo-alt-height");
       var desi = width > 0 && length > 0 && height > 0 ? width * length * height / 3000 : 0;
-      var billable = Math.max(desi, weight);
+      var totalDesi = desi * quantity;
+      var totalWeight = weight * quantity;
+      var billable = Math.max(totalDesi, totalWeight);
+      var altDesi = altWidth > 0 && altLength > 0 && altHeight > 0 ? altWidth * altLength * altHeight / 3000 : 0;
+      var altTotalDesi = altDesi * quantity;
+      var altDiff = altDesi > 0 ? altTotalDesi - totalDesi : 0;
 
       desiText.textContent = formatNumber(desi, 2) + " desi";
+      totalDesiText.textContent = formatNumber(totalDesi, 2) + " desi";
+      totalWeightText.textContent = formatNumber(totalWeight, 2) + " kg";
       billableText.textContent = formatNumber(billable, 2) + " kg/desi";
+      altDesiText.textContent = altDesi > 0 ? formatNumber(altTotalDesi, 2) + " desi" : "0,00 desi";
+      altDiffText.textContent = altDesi > 0 ? (altDiff > 0 ? "+" : "") + formatNumber(altDiff, 2) + " desi" : "0,00 desi";
+      summaryText.value = "Paket ölçüsü: " + formatNumber(width, 2) + " x " + formatNumber(length, 2) + " x " + formatNumber(height, 2) + " cm, adet: " + formatNumber(quantity, 0) + ", toplam desi: " + formatNumber(totalDesi, 2) + ", ücretlendirme ağırlığı: " + formatNumber(billable, 2) + " kg/desi.";
+
+      if (copyStatus) {
+        copyStatus.textContent = "";
+      }
 
       if (desi === 0) {
-        detailText.textContent = "Ölçüleri santimetre cinsinden girerek tahmini desi sonucunu görebilirsiniz.";
-      } else if (weight > 0 && weight > desi) {
-        detailText.textContent = "Gerçek ağırlık, desi değerinden yüksek görünüyor. Kargo firması kurallarına göre yüksek değer dikkate alınabilir.";
-      } else if (weight > 0) {
-        detailText.textContent = "Desi değeri, gerçek ağırlıktan yüksek görünüyor. Nihai ücretlendirme firma ve sözleşme koşullarına göre değişir.";
+        detailText.textContent = "Ölçüleri santimetre cinsinden girerek tek paket ve toplam desi sonucunu görebilirsiniz.";
+      } else if (totalWeight > 0 && totalWeight > totalDesi) {
+        detailText.textContent = "Gerçek ağırlık toplam desiden yüksek görünüyor. Maliyet daha çok ağırlık tarafında oluşabilir.";
+      } else if (totalWeight > 0 && totalDesi > totalWeight) {
+        detailText.textContent = "Hacimsel ağırlık gerçek ağırlıktan yüksek görünüyor. Paket ölçüsü kargo maliyetinizi etkileyebilir.";
       } else {
-        detailText.textContent = "Gerçek ağırlık girerseniz hacimsel değerle karşılaştırma yapılabilir.";
+        detailText.textContent = "Gerçek ağırlık girerseniz toplam desi ile toplam ağırlık karşılaştırması yapılabilir.";
+      }
+
+      if (altDesi === 0 || desi === 0) {
+        altDetailText.textContent = "Alternatif kutu ölçüsü girerseniz mevcut desiye göre farkı görebilirsiniz.";
+      } else if (altDiff < 0) {
+        altDetailText.textContent = "Bu kutu ile yaklaşık " + formatNumber(Math.abs(altDiff), 2) + " desi daha düşük çıkar.";
+      } else if (altDiff > 0) {
+        altDetailText.textContent = "Bu kutu ile yaklaşık " + formatNumber(altDiff, 2) + " desi daha yüksek çıkar.";
+      } else {
+        altDetailText.textContent = "Bu kutu ile mevcut ölçüye göre desi farkı görünmüyor.";
+      }
+
+      if (altDesi > 0 && altDiff < 0) {
+        commerceNoteText.textContent = "Alternatif kutu ölçüsü desiyi düşürüyorsa paketleme optimizasyonu değerlendirilebilir.";
+      } else if (totalWeight > 0 && totalDesi > totalWeight) {
+        commerceNoteText.textContent = "Hacimsel ağırlık gerçek ağırlıktan yüksek görünüyor; paket ölçüsü kargo maliyetinizi etkileyebilir.";
+      } else if (totalWeight > 0 && totalWeight > totalDesi) {
+        commerceNoteText.textContent = "Gerçek ağırlık desiden yüksek görünüyor; maliyet daha çok ağırlık tarafında oluşabilir.";
+      } else {
+        commerceNoteText.textContent = "Kargo maliyeti ürün kârlılığını etkileyebilir; sonuçlar ön hesaplama niteliğindedir.";
       }
     }
 
     form.addEventListener("input", calculate);
+
+    if (copyButton && summaryText) {
+      copyButton.addEventListener("click", function () {
+        summaryText.select();
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(summaryText.value).then(function () {
+            if (copyStatus) copyStatus.textContent = "Özet metni kopyalandı.";
+          }).catch(function () {
+            document.execCommand("copy");
+            if (copyStatus) copyStatus.textContent = "Özet metni kopyalandı.";
+          });
+        } else {
+          document.execCommand("copy");
+          if (copyStatus) copyStatus.textContent = "Özet metni kopyalandı.";
+        }
+      });
+    }
+
     calculate();
   }
 

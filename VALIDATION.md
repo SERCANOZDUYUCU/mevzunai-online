@@ -287,3 +287,23 @@ Apartman aidat hesaplayıcı statik mini apartman yönetim ön hesaplama aracın
 - Aktif HTML/JS taramasında GA4, AdSense, ödeme sağlayıcıları, Supabase, canlı form, `fetch`, `localStorage` veya `sessionStorage` kullanımı bulunmadı.
 
 PASS / APARTMENT_TOOL_V2_SIMPLE_UPGRADE / NO_PROTECTED_SYSTEM_CHANGE
+
+## Cargo Desi Tool v2 Simple Upgrade
+
+Tarih: 2026-07-02
+
+Kargo desi hesaplayıcı statik mini kargo ölçü ve maliyet ön kontrol aracına yükseltildi:
+
+- `tools/kargo-desi.html` içine adet, toplam desi, toplam gerçek ağırlık, tahmini ücretlendirme ağırlığı, alternatif kutu ölçüsü, alternatif desi farkı ve kopyalanabilir özet eklendi.
+- Sonuç altında Brüt Kâr Hesaplayıcı iç linki korundu.
+- Yeni sayfa eklenmediği için `sitemap.xml` değiştirilmedi; sitemap 19 URL olarak kaldı.
+- 19 HTML sayfası içinde kırık iç link bulunmadı.
+- Adetli test: 40 x 30 x 20 cm, 5 kg, 3 adet için tek paket `8,00 desi`, toplam desi `24,00 desi`, toplam gerçek ağırlık `15,00 kg`, tahmini ücretlendirme ağırlığı `24,00 kg/desi`.
+- Alternatif kutu testi: 35 x 25 x 20 cm ve 3 adet için alternatif toplam desi `17,50 desi`, mevcut toplam desiye göre fark `-6,50 desi`.
+- Ağırlık baskın test: 20 x 20 x 20 cm, 10 kg, 2 adet için toplam desi `5,33 desi`, toplam gerçek ağırlık `20,00 kg`, tahmini ücretlendirme ağırlığı `20,00 kg/desi`.
+- 360px mobil viewport kontrolünde kargo desi aracı yatay taşma üretmedi.
+- Hesaplama etkileşimlerinden sonra URL değişmedi; kullanıcı girdileri URL'ye yazılmadı.
+- Kritik sayfalarda form ve dosya yükleme input sayısı `0`.
+- Aktif HTML/JS taramasında GA4, AdSense, ödeme sağlayıcıları, Supabase, canlı form, `fetch`, `localStorage` veya `sessionStorage` kullanımı bulunmadı.
+
+PASS / CARGO_DESI_TOOL_V2_SIMPLE_UPGRADE / NO_PROTECTED_SYSTEM_CHANGE
